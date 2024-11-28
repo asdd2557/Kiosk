@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Kiosk {
     // 키오스크에서 사용할 메뉴 리스트를 저장
-    private List<Menu> menu_List = new ArrayList<>();
+    private List<Menu> menuList = new ArrayList<>();
     Scanner scanner = new Scanner(System.in); // 사용자 입력 처리
 
     // 키오스크를 시작하는 메소드
@@ -24,18 +24,18 @@ public class Kiosk {
             switch (scanner.nextInt()) {
                 case 1:
                     // Burgers 메뉴를 출력하고 해당 메뉴로 이동
-                    menu_List.get(0).showMenu();
-                    inMenu(menu_List.get(0));
+                    menuList.get(0).showMenu();
+                    inMenu(menuList.get(0));
                     break;
                 case 2:
                     // Drink 메뉴를 출력하고 해당 메뉴로 이동
-                    menu_List.get(1).showMenu();
-                    inMenu(menu_List.get(1));
+                    menuList.get(1).showMenu();
+                    inMenu(menuList.get(1));
                     break;
                 case 3:
                     // Desserts 메뉴를 출력하고 해당 메뉴로 이동
-                    menu_List.get(2).showMenu();
-                    inMenu(menu_List.get(2));
+                    menuList.get(2).showMenu();
+                    inMenu(menuList.get(2));
                     break;
                 case 0:
                     // 0번 선택 시 프로그램 종료
@@ -50,22 +50,22 @@ public class Kiosk {
         switch (scanner.nextInt()) {
             case 1:
                 // 첫 번째 메뉴 아이템을 주문
-                System.out.println(menu.getMenuItems_List().get(0).getName() + "을 주문하셨습니다.");
+                System.out.println(menu.getMenuItemsList().get(0).getName() + "을 주문하셨습니다.");
                 System.out.println("");
                 break;
             case 2:
                 // 두 번째 메뉴 아이템을 주문
-                System.out.println(menu.getMenuItems_List().get(1).getName() + "을 주문하셨습니다.");
+                System.out.println(menu.getMenuItemsList().get(1).getName() + "을 주문하셨습니다.");
                 System.out.println("");
                 break;
             case 3:
                 // 세 번째 메뉴 아이템을 주문
-                System.out.println(menu.getMenuItems_List().get(2).getName() + "을 주문하셨습니다.");
+                System.out.println(menu.getMenuItemsList().get(2).getName() + "을 주문하셨습니다.");
                 System.out.println("");
                 break;
             case 4:
                 // 네 번째 메뉴 아이템을 주문
-                System.out.println(menu.getMenuItems_List().get(3).getName() + "을 주문하셨습니다.");
+                System.out.println(menu.getMenuItemsList().get(3).getName() + "을 주문하셨습니다.");
                 System.out.println("");
                 break;
             case 0:
@@ -78,11 +78,11 @@ public class Kiosk {
 
     // 새로운 메뉴를 추가하는 메소드
     public void addMenu(Menu menu) {
-        this.menu_List.add(menu); // 메뉴 리스트에 새로운 메뉴를 추가
+        this.menuList.add(menu); // 메뉴 리스트에 새로운 메뉴를 추가
     }
 
     // 현재 메뉴 리스트를 반환하는 메소드
-    public List<Menu> getMenu_List() {
-        return this.menu_List; // 저장된 메뉴 리스트 반환
+    public List<Menu> getMenuList() {
+        return this.menuList; // 저장된 메뉴 리스트 반환
     }
 }
